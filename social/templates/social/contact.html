@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="p-5">
+
+<div class="row">
+	<div class="col">
+	<h1 class="myhead2">Contact</h1>
+		<hr>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6">
+	<form>
+	<input class="form-control" type="text" name="uname" placeholder="Name" /><br>
+	<input class="form-control" type="email" name="email" placeholder="email" /><br>
+	<input class="form-control" type="tel" name="phone_no" placeholder="Phone No" /><br>
+	<textarea class="form-control"  placeholder="MSG"></textarea><br>
+	<button class="btn btn-dark btn-block" type="submit">Submit</button>
+	</form>
+	</div>
+	<div class="col-sm-6">
+	<p>
+	<strong><span class="fa fa-map-marker mx-2"></strong>  New Baneshwor, Kathmandu<br><br>
+	<strong><span class="fa fa-phone mx-2"></strong> +977-01-5172175<br><br>
+	<strong><span class="fa fa-fax mx-2"></strong> +977-01-5172175<br><br>
+	<strong><span class="fa fa-globe mx-2"></strong> http://mbmc.edu.np<br><br>
+	</p>
+	</div>
+</div>
+<div class="row my-5">
+<div class="col-sm-8 offset-sm-2">
+<div class="embed-responsive embed-responsive-16by9">
+	<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.71280496903!2d85.32739741506182!3d27.695269982796873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1975b4fa8e0b%3A0x865d39dd110d5069!2sMadan%20Bhandari%20Memorial%20College!5e0!3m2!1sen!2snp!4v1580649341356!5m2!1sen!2snp"></iframe>" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+
+</main>
+{% endblock %}

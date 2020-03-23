@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<main class="p-5">
+<div class="row text-justify">
+	<div class="col">
+	<h1 class="myhead2">Register Page</h1>
+	<hr>
+	</div>
+</div>
+<form enctype="multipart/form-data" method="post">
+{% csrf_token %}
+{{form | crispy}}<br>
+<input class="btn btn-primary" type="submit" />
+</form>
+</main>
+{% endblock %}

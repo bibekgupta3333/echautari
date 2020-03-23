@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-5">
+<h1 class="myhead2">My Posts </h1>
+<hr>
+<form class="form-inline">
+<input class="form-control mr-3" placeholder="Search" value="{{ request.GET.si }}" type="text" name="si" />
+<input class="btn btn-dark mr-3" type="submit" value="Search" />
+<a class="btn btn-dark" href="/social/mypost/create"><span class="fa fa-plus"></span></a>
+</form>
+<div class="row p-5">
+
+{% for n1 in mypost_list %}
+	<div class="col-sm-4 p-4">
+<div class="card h-100">
+   <a href='/social/mypost/{{n1.id}}'>     <img class="card-img-top" src="/media/{{n1.pic}}" alt=""></a>
+    <div class="card-body">
+        <h4 class="card-title">{{n1.subject}}</h4>
+        <p class="card-text">{{n1.cr_date | date:"d/m/y"}} - {{n1.uploaded_by}}
+        {% if n1.uploaded_by.pic %}
+		<img style="width: 50px; height: 50px;" class="img-fluid rounded-circle" src="/media/{{n1.uploaded_by.pic}}" />
+		{% endif %}
+		</p>
+		     {% if n1.liked %}
+            <a class="btn btn-danger btn-sm" href='/social/mypost/unlike/{{n1.id}}'><span class="fa fa-thumbs-down"></span></a>
+            {% else %}
+            <a class="btn btn-success btn-sm" href='/social/mypost/like/{{n1.id}}'><span class="fa fa-thumbs-up"></span></a>
+            {% endif %}
+		<a class="btn btn-dark btn-sm" href='/social/mypost/{{n1.id}}'>Read More</a>
+            {% if user.is_superuser %}
+            <a class="btn btn-danger btn-sm" href='/social/mypost/delete/{{n1.id}}'><span class="fa fa-trash"></span></a>
+            {% endif %}
+            <span class="badge badge-info">Likes {{n1.likedno}}</span> 
+        </div>
+</div>
+		
+	</div>
+{% endfor %}
+</div>
+
+{% endblock %}
